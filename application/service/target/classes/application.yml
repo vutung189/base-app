@@ -1,0 +1,27 @@
+# ===================================================================
+# Spring Boot configuration.
+#
+spring:
+  application:
+    name: app
+  jpa:
+    database-platform: org.hibernate.dialect.Oracle12cDialect
+    database: ORACLE
+    show-sql: false
+    hibernate:
+      ddl-auto: update
+  datasource:
+    driver-class-name: oracle.jdbc.OracleDriver
+    url: jdbc:oracle:thin:@10.226.46.29:1521:mwallet
+    username: 'ewallet_si'
+    password: 'Telemor@123'
+    hikari:
+      idle-timeout: 10000
+      maximum-pool-size: 10
+      minimum-idle: 1
+      pool-name: ReadHikariPool
+  main:
+    allow-bean-definition-overriding: true
+logging:
+  level:
+    root: DEBUG
