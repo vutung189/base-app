@@ -1,0 +1,22 @@
+stages:
+  - deploy
+variables:
+  TAG_LATEST: $CI_REGISTRY_IMAGE/$CI_COMMIT_REF_NAME:latest
+  TAG_COMMIT: $CI_REGISTRY_IMAGE/$CI_COMMIT_REF_NAME:$CI_COMMIT_SHORT_SHA
+  GIT_STRATEGY: clone  
+deploy:
+  stage: deploy
+  image: docker:latest
+  services:
+    - docker:18.09.7-dind
+  tags:
+    - fe
+  script:
+    - docker build -t feb -f ./scripts/Dockerfile .
+    - docker container rm -f feb || true
+    - docker run -d -p 8082:80 --name feb feb
+  environment:
+    name: production
+    url: http://10.10.106.13
+  only:
+    - main
