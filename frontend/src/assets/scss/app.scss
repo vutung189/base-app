@@ -1,0 +1,27 @@
+//Core files
+@import "../../../node_modules/bootstrap/scss/functions";
+@import "../../../node_modules/bootstrap/scss/variables";
+@import "../../../node_modules/bootstrap/scss/bootstrap";
+@import "./variables";
+@import "./light-mode";
+
+// Structure
+@import "./structure/general";
+@import "./structure/left-menu";
+@import "./structure/topbar";
+@import "./structure/page-head";
+@import "./structure/footer";
+@import "./structure/layouts";
+
+//Pages
+@import "./pages/authentication";
+@import "./pages/error";
+@import "./pages/logout";
+
+//Table
+@import "./table/datatable";
+@import "./table/react-table";
+@import "./table/bootstrap-tables";
+@import "./table/tablesaw";
+@import "./table/tables";
+@import "./table/responsive-table";
