@@ -1,11 +1,7 @@
 import { useEffect } from "react";
 import { Card, Container } from "react-bootstrap";
 import { useTranslation } from "react-i18next";
-import Lottie from "react-lottie";
-import { Link } from "react-router-dom";
-import childWalkLottie from "assets/images/lotties/child-walk.json";
 
-import Logo from "assets/images/users/user-1.jpg";
 
 interface AccountLayoutProps {
   helpText?: string;

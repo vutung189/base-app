@@ -8,7 +8,6 @@ import React from "react";
 import { Button } from "react-bootstrap";
 import { useTranslation } from "react-i18next";
 import { useHistory } from "react-router-dom";
-import { sizePerPageList } from "utils/constants";
 import { getPageSizeParams } from "utils/utils";
 
 export interface Page {
@@ -30,19 +29,13 @@ const Pagination = ({ pagingRes }: PaginationProps) => {
    */
   const history = useHistory();
   const search = history.location.search;
-  const { page: pageIndex, size, params } = getPageSizeParams(search);
+  const { page: pageIndex, params } = getPageSizeParams(search);
   const pageCount = pagingRes.totalPages;
   const activePage: number = pageIndex;
   const visiblePages = filterPages(
     getVisiblePages(pagingRes.number, pageCount),
     pageCount
   );
-
-  const handleChangeSize = (size: number) => {
-    params.set("size", String(size));
-    params.set("page", String(1));
-    history.push(`${history.location.pathname}?${params.toString()}`);
-  };
 
   const handleChangePage = (page: number) => {
     const activePage = pageIndex;

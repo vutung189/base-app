@@ -6,6 +6,7 @@ import { useHistory } from "react-router-dom";
 import { ScreenRoutes } from "routes";
 import { formatDateFromNumber } from "utils/date";
 import { DataSearch, LGDetail } from "utils/type/LgInterface";
+import { numberWithCommas } from "utils/utils";
 interface Props {
   data: DataSearch;
 }
@@ -35,9 +36,12 @@ const Result = ({ data }: Props) => {
       },
     },
     {
-      Header: "Amount & Ccy",
-      accessor: "amountCcy",
+      Header: "Existing LG Amount",
+      accessor: "existingLgAmount",
       className: "text-break w-10",
+      Cell: ({ row }: Cell) => {
+        return <>{numberWithCommas(row.original.existingLgAmount)}</>;
+      },
     },
     {
       Header: "Applicant Name",

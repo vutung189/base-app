@@ -22,7 +22,6 @@ const PasswordInput = ({
   placeholder,
   refCallback,
   errors,
-  control,
   register,
   className,
   textGroup,
@@ -101,7 +100,6 @@ const FormInput = ({
 }: FormInputProps) => {
   // handle input type
   const {
-    control,
     register,
     formState: { errors },
   } = useFormContext();

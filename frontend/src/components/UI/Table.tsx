@@ -1,57 +1,14 @@
 import classNames from "classnames";
-import React, { forwardRef, useEffect, useRef, useState } from "react";
+import React, { forwardRef, useEffect, useRef } from "react";
 import {
-  useAsyncDebounce,
   useExpanded,
   useGlobalFilter,
   usePagination,
   useRowSelect,
   useSortBy,
-  useTable,
+  useTable
 } from "react-table";
-import { sizePerPageList } from "utils/constants";
 import Pagination, { Page } from "./Pagination";
-
-// components
-
-interface GlobalFilterProps {
-  preGlobalFilteredRows: any;
-  globalFilter: any;
-  setGlobalFilter: any;
-  searchBoxClass: any;
-}
-
-// Define a default UI for filtering
-const GlobalFilter = ({
-  preGlobalFilteredRows,
-  globalFilter,
-  setGlobalFilter,
-  searchBoxClass,
-}: GlobalFilterProps) => {
-  const count = preGlobalFilteredRows.length;
-  const [value, setValue] = useState<any>(globalFilter);
-  const onChange = useAsyncDebounce((value) => {
-    setGlobalFilter(value || undefined);
-  }, 200);
-
-  return (
-    <div className={classNames(searchBoxClass)}>
-      <span className="d-flex align-items-center">
-        Search :{" "}
-        <input
-          type="search"
-          value={value || ""}
-          onChange={(e: any) => {
-            setValue(e.target.value);
-            onChange(e.target.value);
-          }}
-          placeholder={`${count} records...`}
-          className="form-control w-auto ms-1"
-        />
-      </span>
-    </div>
-  );
-};
 
 interface IndeterminateCheckboxProps {
   indeterminate: any;

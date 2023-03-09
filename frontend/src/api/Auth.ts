@@ -1,7 +1,6 @@
 import axios from "axios";
 import { LoginSuccessResponse } from "../utils/type/AuthInterface";
 import { NormalizedResponse } from "../utils/type/common";
-import { getRefreshToken } from "./browser";
 import { handleError, handleResponse } from "./generics";
 const axiosApi = axios.create();
 // intercepting to capture errors

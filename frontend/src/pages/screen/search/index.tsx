@@ -23,10 +23,7 @@ const SearchScreen = () => {
 
   const [submitedFormValues, submitFormValues] = useState(initFormValues);
 
-  const {
-    data: dataFilter,
-    isLoading,
-  } = usePaginatedFilterUrl(
+  const { data: dataFilter, isLoading } = usePaginatedFilterUrl(
     QueryKeys.GET_LIST,
     SearchApi.search,
     convertPayload,
@@ -42,13 +39,7 @@ const SearchScreen = () => {
         defaultFormValues={value}
         isLoading={isLoading}
       />
-      <Result
-        data={dataFilter}
-        // loading={isLoading}
-        // totalRecord={totalRecord}
-        // submitFormValues={submitFormValues}
-        // defaultPage={defaultPage}
-      />
+      <Result data={dataFilter} />
     </>
   );
 };

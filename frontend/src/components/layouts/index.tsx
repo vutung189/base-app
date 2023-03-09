@@ -1,10 +1,10 @@
-import React, { Suspense, useCallback, useEffect, useState } from "react";
-import { useSelector, useDispatch } from "react-redux";
+import { Suspense, useCallback, useEffect } from "react";
 import { Container } from "react-bootstrap";
-import { AppDispatch, RootState } from "redux/store";
-import { changeBodyAttribute } from "utils/menu";
+import { useDispatch, useSelector } from "react-redux";
 import { changeSidebarType } from "redux/layout/actions";
+import { AppDispatch, RootState } from "redux/store";
 import { SideBarTypes } from "utils/constants";
+import { changeBodyAttribute } from "utils/menu";
 
 const loading = () => <div className=""></div>;
 

@@ -39,7 +39,7 @@ const Search = ({
     <FormProvider {...form}>
       <Form onSubmit={handleSubmit(onFinish)} className="mb-4">
         <Card>
-          <Card.Body className="bg-light">
+          <Card.Body>
             <Row>
               <Col md={3} className="mb-2">
                 <FormInput name="lgReference" label="LG Reference#" />

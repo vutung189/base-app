@@ -1,11 +1,10 @@
 import { useMemo } from "react";
 import { Form } from "react-bootstrap";
 import DatePicker, { ReactDatePickerProps } from "react-datepicker";
-import { Controller, useFormContext, useWatch } from "react-hook-form";
-import { convertDateToStrDate, convertStrDateToDate } from "utils/date";
 import "react-datepicker/dist/react-datepicker.css";
+import { Controller, useFormContext, useWatch } from "react-hook-form";
 import { FORMAT_DATE } from "utils/constants";
-import { format } from "date-fns";
+import { convertDateToStrDate, convertStrDateToDate } from "utils/date";
 
 interface Props extends Omit<ReactDatePickerProps, "onChange"> {
   name: string;
@@ -29,7 +28,6 @@ export const DateInput = ({
 }: Props) => {
   const {
     control,
-    register,
     formState: { errors },
   } = useFormContext();
 

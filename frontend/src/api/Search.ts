@@ -1,4 +1,3 @@
-import _ from "lodash";
 import { APICore } from "./axios";
 
 const api = new APICore();
