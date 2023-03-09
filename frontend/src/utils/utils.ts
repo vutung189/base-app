@@ -3,8 +3,6 @@ import _ from "lodash";
 export const toObjectWithDateMoment = (obj: Record<string, any>) => {
   const result: Record<string, any> = {};
   _.forEach(obj, (value, key) => {
-    console.log(value, key);
-
     result[key] = value;
   });
   return result;

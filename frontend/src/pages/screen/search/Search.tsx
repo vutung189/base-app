@@ -16,7 +16,6 @@ const Search = ({
   isLoading,
 }: Props) => {
   const form = useForm({ defaultValues: initFormValues });
-  console.log("initFormValues", initFormValues);
 
   const { handleSubmit } = form;
 
@@ -66,7 +65,7 @@ const Search = ({
               <Col md={3} className="d-flex align-items-end gap-4 mb-2">
                 <Button type="submit" variant="primary" disabled={isLoading}>
                   {isLoading && <Spinner size="sm" />}
-                  <i className="bi bi-search"></i> Search
+                  {" "}Search
                 </Button>
 
                 <Button
@@ -75,7 +74,7 @@ const Search = ({
                   onClick={handleReset}
                 >
                   {isLoading && <Spinner size="sm" />}
-                  Refresh
+                  {" "}Refresh
                 </Button>
               </Col>
             </Row>

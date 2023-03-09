@@ -19,25 +19,22 @@ export function usePaginatedFilterUrl(
   const path = location.pathname;
   const search = location.search;
 
-  const { params } = getPageSizeParams(search);
+  const { params, page: pageTmp = 1 } = getPageSizeParams(search);
 
-  const { page: pageTmp = 1, size: sizeTmp = 10 } = formValues;
   const page = pageTmp < 1 ? 1 : pageTmp;
-  const size = sizeTmp < 1 || sizeTmp > 100 ? 10 : sizeTmp;
+  // const size = sizeTmp < 1 || sizeTmp > 100 ? 100 : sizeTmp;
 
   const pageValue = page - 1;
 
   useEffect(() => {
     if (hasPage) {
-      params.set("page", page);
-      params.set("size", size);
+      params.set("page", page.toString());
+      // params.set("size", size.toString());
     }
     history.push(`${path}?${params.toString()}`);
-  }, [page, size]);
+  }, [page]);
 
   useEffect(() => {
-    console.log("formValues", formValues);
-    
     if (formValues) {
       params.set(
         "filter",
@@ -48,11 +45,11 @@ export function usePaginatedFilterUrl(
   }, [formValues]);
 
   const requestData = useMemo(() => {
-    if (page > 0 && size > 0 && size <= 100) {
+    if (page > 0) {
       const rs = converterPayload(formValues);
-      return hasPage ? { ...rs, page: pageValue, size } : rs;
+      return hasPage ? { ...rs, page: pageValue } : rs;
     }
-  }, [page, size, formValues]);
+  }, [page, formValues]);
 
   const result: any = useFetch(fetcher, requestData, queryKey, {
     enabled: !!requestData,
@@ -67,6 +64,7 @@ export function usePaginatedFilterUrl(
 
   useEffect(() => {
     const totalElements = result?.data?.data?.totalElements;
+    const size = result?.data?.data?.size || 100;
 
     if (totalElements) {
       const pageTmp = _.round(totalElements / size);
@@ -88,7 +86,7 @@ export function usePaginatedFilterUrl(
     data: result.data?.data,
     defaultPageCurrent: page,
     totalRecord: result.data?.data?.totalElements,
-    defaultPage: { page, size },
+    defaultPage: { page, size: 100 },
     isLoading: result.isFetching,
     requestData,
   };

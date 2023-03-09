@@ -142,10 +142,6 @@ const Table = (props: TableProps) => {
     .forEach((element) => {
       columnsHidden.push(element.accessor);
     });
-  console.log(
-    props?.pageSize,
-    props?.pageSize || sizePerPageList[0]?.value || 10
-  );
 
   const dataTable = useTable(
     {
@@ -229,7 +225,7 @@ const Table = (props: TableProps) => {
     }
   );
 
-  const rows =  dataTable.rows;
+  const rows = dataTable.rows;
 
   return (
     <>

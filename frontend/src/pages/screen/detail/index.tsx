@@ -41,7 +41,7 @@ const Detail = () => {
         <Col md={5}>
           <Row>
             <Col md={6}>LG Reference#</Col>
-            <Col md={6} className="border-bottom text-info">
+            <Col md={6} className="border-bottom">
               {lgDetail?.lgReference}
             </Col>
           </Row>
@@ -49,7 +49,7 @@ const Detail = () => {
         <Col md={5}>
           <Row>
             <Col md={6}>Requested Type</Col>
-            <Col md={6} className="border-bottom text-info">
+            <Col md={6} className="border-bottom">
               {lgDetail?.requesterType}
             </Col>
           </Row>
@@ -57,7 +57,7 @@ const Detail = () => {
         <Col md={5}>
           <Row>
             <Col md={6}>Beneficiary Name</Col>
-            <Col md={6} className="border-bottom text-info">
+            <Col md={6} className="border-bottom">
               {lgDetail?.beneficiaryName}
             </Col>
           </Row>
@@ -65,7 +65,7 @@ const Detail = () => {
         <Col md={5}>
           <Row>
             <Col md={6}>Beneficiary UID</Col>
-            <Col md={6} className="border-bottom text-info">
+            <Col md={6} className="border-bottom">
               {lgDetail?.beneficiaryUid}
             </Col>
           </Row>
@@ -73,7 +73,7 @@ const Detail = () => {
         <Col md={5}>
           <Row>
             <Col md={6}>Beneficiary IBAN</Col>
-            <Col md={6} className="border-bottom text-info">
+            <Col md={6} className="border-bottom">
               {lgDetail?.beneficiaryIban}
             </Col>
           </Row>
@@ -81,7 +81,7 @@ const Detail = () => {
         <Col md={5}>
           <Row>
             <Col md={6}>Applicant Name</Col>
-            <Col md={6} className="border-bottom text-info">
+            <Col md={6} className="border-bottom">
               {lgDetail?.applicantName}
             </Col>
           </Row>
@@ -89,7 +89,7 @@ const Detail = () => {
         <Col md={5}>
           <Row>
             <Col md={6}>Applicant ID#</Col>
-            <Col md={6} className="border-bottom text-info">
+            <Col md={6} className="border-bottom">
               {lgDetail?.applicantId}
             </Col>
           </Row>
@@ -97,7 +97,7 @@ const Detail = () => {
         <Col md={5}>
           <Row>
             <Col md={6}>Applicant CR#</Col>
-            <Col md={6} className="border-bottom text-info">
+            <Col md={6} className="border-bottom">
               {lgDetail?.applicantCr}
             </Col>
           </Row>
@@ -105,7 +105,7 @@ const Detail = () => {
         <Col md={5}>
           <Row>
             <Col md={6}>Bank fee IBAN</Col>
-            <Col md={6} className="border-bottom text-info">
+            <Col md={6} className="border-bottom">
               {lgDetail?.bankFeeIban}
             </Col>
           </Row>
@@ -113,7 +113,7 @@ const Detail = () => {
         <Col md={5}>
           <Row>
             <Col md={6}>Special Amount IBAN</Col>
-            <Col md={6} className="border-bottom text-info">
+            <Col md={6} className="border-bottom">
               {lgDetail?.specialAccountIban}
             </Col>
           </Row>
@@ -121,7 +121,7 @@ const Detail = () => {
         <Col md={5}>
           <Row>
             <Col md={6}>Applicant IBAN</Col>
-            <Col md={6} className="border-bottom text-info">
+            <Col md={6} className="border-bottom">
               {lgDetail?.applicantIban}
             </Col>
           </Row>
@@ -129,7 +129,7 @@ const Detail = () => {
         <Col md={5}>
           <Row>
             <Col md={6}>SADAD ID</Col>
-            <Col md={6} className="border-bottom text-info">
+            <Col md={6} className="border-bottom">
               {lgDetail?.sadadId}
             </Col>
           </Row>
@@ -137,7 +137,7 @@ const Detail = () => {
         <Col md={5}>
           <Row>
             <Col md={6}>Existing LG Amount</Col>
-            <Col md={6} className="border-bottom text-info">
+            <Col md={6} className="border-bottom">
               {numberWithCommas(lgDetail?.existingLgAmount)}
             </Col>
           </Row>
@@ -145,7 +145,7 @@ const Detail = () => {
         <Col md={5}>
           <Row>
             <Col md={6}>Amendment Amount</Col>
-            <Col md={6} className="border-bottom text-info">
+            <Col md={6} className="border-bottom">
               {numberWithCommas(lgDetail?.amendmentAmount)}
             </Col>
           </Row>
@@ -153,7 +153,7 @@ const Detail = () => {
         <Col md={5}>
           <Row>
             <Col md={6}>Existing LG Validity Date</Col>
-            <Col md={6} className="border-bottom text-info">
+            <Col md={6} className="border-bottom">
               {formatDateFromNumber(lgDetail?.existingLgvalidityDate)}
             </Col>
           </Row>
@@ -161,7 +161,7 @@ const Detail = () => {
         <Col md={5}>
           <Row>
             <Col md={6}>Amendment LG Validity Date</Col>
-            <Col md={6} className="border-bottom text-info">
+            <Col md={6} className="border-bottom">
               {formatDateFromNumber(lgDetail?.amendmentLgValidityDate)}
             </Col>
           </Row>
@@ -169,7 +169,7 @@ const Detail = () => {
         <Col md={5}>
           <Row>
             <Col md={6}>Amendment Terms & Conditions</Col>
-            <Col md={6} className="border-bottom text-info">
+            <Col md={6} className="border-bottom">
               {lgDetail?.amendmentTermCondition}
             </Col>
           </Row>
@@ -178,7 +178,7 @@ const Detail = () => {
         <Col md={5}>
           <Row>
             <Col md={6}>Applicant CIF</Col>
-            <Col md={6} className="border-bottom text-info">
+            <Col md={6} className="border-bottom">
               {lgDetail?.applicantCif}
             </Col>
           </Row>

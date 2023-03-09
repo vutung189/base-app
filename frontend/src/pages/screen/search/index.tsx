@@ -34,8 +34,6 @@ const SearchScreen = () => {
     submitedFormValues
   );
 
-  console.log(dataFilter);
-  
   return (
     <>
       <Search
