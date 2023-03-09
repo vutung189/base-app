@@ -1,9 +1,0 @@
-com\app\model\Category.class
-com\app\repository\CategoryRepository.class
-com\app\config\WebConfig.class
-com\app\controller\CategoryController.class
-com\app\controller\SearchController.class
-com\app\service\CategoryService.class
-com\app\service\CategoryServiceImpl.class
-com\app\App.class
-com\app\model\Skill.class

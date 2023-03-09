@@ -1,5 +1,6 @@
 package com.app.config;
 
+import com.app.config.security.jwt.JWTAuthenticationEntryPoint;
 import com.app.config.security.jwt.JWTConfigurer;
 import com.app.config.security.jwt.TokenProvider;
 import org.springframework.context.annotation.Bean;
@@ -21,46 +22,53 @@ import org.springframework.web.filter.CorsFilter;
 @EnableGlobalMethodSecurity(prePostEnabled = true, securedEnabled = true)
 public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
-	private final TokenProvider tokenProvider;
+  private final TokenProvider tokenProvider;
 
-	private final CorsFilter corsFilter;
+  private final CorsFilter corsFilter;
 
-	public SecurityConfiguration(TokenProvider tokenProvider, CorsFilter corsFilter) {
-		this.tokenProvider = tokenProvider;
-		this.corsFilter = corsFilter;
-	}
+  private final JWTAuthenticationEntryPoint unauthorizedHandler;
 
-	@Bean(name = BeanIds.AUTHENTICATION_MANAGER)
-	@Override
-	public AuthenticationManager authenticationManagerBean() throws Exception {
-		return super.authenticationManagerBean();
-	}
+  public SecurityConfiguration(TokenProvider tokenProvider, CorsFilter corsFilter,
+      JWTAuthenticationEntryPoint unauthorizedHandler) {
+    this.tokenProvider = tokenProvider;
+    this.corsFilter = corsFilter;
+    this.unauthorizedHandler = unauthorizedHandler;
+  }
 
-	@Bean
-	public PasswordEncoder passwordEncoder() {
-		return new BCryptPasswordEncoder();
-	}
+  @Bean(name = BeanIds.AUTHENTICATION_MANAGER)
+  @Override
+  public AuthenticationManager authenticationManagerBean() throws Exception {
+    return super.authenticationManagerBean();
+  }
 
-	@Override
-	public void configure(WebSecurity web) throws Exception {
-		web.ignoring().antMatchers(HttpMethod.OPTIONS, "/**").antMatchers("/swagger-ui/index.html")
-				.antMatchers("/test/**");
-	}
+  @Bean
+  public PasswordEncoder passwordEncoder() {
+    return new BCryptPasswordEncoder();
+  }
 
-	@Override
-	public void configure(HttpSecurity http) throws Exception {
-		// @formatter:off
-		http.csrf().disable().addFilterBefore(corsFilter, UsernamePasswordAuthenticationFilter.class)
-				.headers().frameOptions().disable().and().sessionManagement()
-				.sessionCreationPolicy(SessionCreationPolicy.STATELESS).and().authorizeRequests()
-				.antMatchers("/api/login","/api/oauth2/**").permitAll()
-				.antMatchers("/api/register").permitAll()
-				.antMatchers("/api/activate").permitAll()
-				.antMatchers("/api/**").authenticated()
-				.and().apply(securityConfigurerAdapter());
-	}
+  @Override
+  public void configure(WebSecurity web) throws Exception {
+    web.ignoring().antMatchers(HttpMethod.OPTIONS, "/**")
+        .antMatchers("/v2/api-docs/**", "/swagger-ui.html", "/swagger-ui/index.html", "/configuration/ui", "/swagger-resources/**",
+            "/configuration/**", "/webjars/**")
+        .antMatchers("/test/**");
+  }
 
-	private JWTConfigurer securityConfigurerAdapter() {
-		return new JWTConfigurer(tokenProvider);
-	}
+  @Override
+  public void configure(HttpSecurity http) throws Exception {
+    // @formatter:off
+    http.csrf().disable().addFilterBefore(corsFilter, UsernamePasswordAuthenticationFilter.class)
+        .exceptionHandling().authenticationEntryPoint(unauthorizedHandler).and()
+        .headers().frameOptions().disable().and().sessionManagement()
+        .sessionCreationPolicy(SessionCreationPolicy.STATELESS).and().authorizeRequests()
+        .antMatchers("/api/login", "/api/oauth2/**").permitAll()
+        .antMatchers("/api/register").permitAll()
+        .antMatchers("/api/activate").permitAll()
+        .antMatchers("/api/**").authenticated()
+        .and().apply(securityConfigurerAdapter());
+  }
+
+  private JWTConfigurer securityConfigurerAdapter() {
+    return new JWTConfigurer(tokenProvider);
+  }
 }

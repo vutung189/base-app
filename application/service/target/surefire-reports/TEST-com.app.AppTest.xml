@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="1" failures="0" name="com.app.AppTest" time="0.005" errors="0" skipped="0">
+<testsuite tests="1" failures="0" name="com.app.AppTest" time="0.003" errors="0" skipped="0">
   <properties>
     <property name="idea.version" value="2022.3.1"/>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="java.vm.version" value="11.0.16.1+1-LTS-1"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-11.0.16.1\bin"/>
-    <property name="maven.multiModuleProjectDirectory" value="D:\freelancer\application"/>
+    <property name="maven.multiModuleProjectDirectory" value="D:\freelancer\base-app\application\service"/>
     <property name="java.vm.vendor" value="Oracle Corporation"/>
     <property name="java.vendor.url" value="https://openjdk.java.net/"/>
     <property name="guice.disable.misplaced.annotation.check" value="true"/>
@@ -16,7 +16,7 @@
     <property name="user.country" value="US"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
-    <property name="user.dir" value="D:\freelancer\application"/>
+    <property name="user.dir" value="D:\freelancer\base-app\application\service"/>
     <property name="java.vm.compressedOopsMode" value="Zero based"/>
     <property name="java.runtime.version" value="11.0.16.1+1-LTS-1"/>
     <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment"/>
@@ -30,7 +30,7 @@
     <property name="maven.ext.class.path" value="C:\Program Files\JetBrains\IntelliJ IDEA 2022.3.1\plugins\maven\lib\maven-event-listener.jar"/>
     <property name="classworlds.conf" value="C:\Program Files\JetBrains\IntelliJ IDEA 2022.3.1\plugins\maven\lib\maven3\bin\m2.conf"/>
     <property name="sun.jnu.encoding" value="Cp1252"/>
-    <property name="java.library.path" value="C:\Program Files\Java\jdk-11.0.16.1\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files (x86)\NetSarang\Xftp 6\;C:\Program Files (x86)\NetSarang\Xshell 6\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\dotnet\;C:\Program Files\TortoiseSVN\bin;C:\Program Files\Git\cmd;C:\Program Files\Java\jdk-11.0.16.1\bin;D:\setup\apache-maven-3.8.6\bin;C:\Program Files\nodejs\;D:\setup\apache-ant-1.10.13\bin;;C:\Program Files\Docker\Docker\resources\bin;C:\Users\VSS\AppData\Local\Microsoft\WindowsApps;;C:\Users\VSS\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\VSS\AppData\Roaming\npm;."/>
+    <property name="java.library.path" value="C:\Program Files\Java\jdk-11.0.16.1\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files (x86)\NetSarang\Xftp 6\;C:\Program Files (x86)\NetSarang\Xshell 6\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\dotnet\;C:\Program Files\TortoiseSVN\bin;C:\Program Files\Git\cmd;C:\Program Files\Java\jdk-11.0.16.1\bin;D:\setup\apache-maven-3.8.6\bin;C:\Program Files\nodejs\;D:\setup\apache-ant-1.10.13\bin;;C:\Program Files\Docker\Docker\resources\bin;C:\Program Files\PuTTY\;C:\Users\VSS\AppData\Local\Microsoft\WindowsApps;;C:\Users\VSS\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\VSS\AppData\Roaming\npm;."/>
     <property name="jansi.passthrough" value="true"/>
     <property name="maven.conf" value="C:\Program Files\JetBrains\IntelliJ IDEA 2022.3.1\plugins\maven\lib\maven3/conf"/>
     <property name="jdk.debug" value="release"/>
@@ -47,7 +47,7 @@
     <property name="java.class.path" value="C:\Program Files\JetBrains\IntelliJ IDEA 2022.3.1\plugins\maven\lib\maven3\boot\plexus-classworlds-2.6.0.jar;C:\Program Files\JetBrains\IntelliJ IDEA 2022.3.1\plugins\maven\lib\maven3\boot\plexus-classworlds.license"/>
     <property name="java.vm.specification.version" value="11"/>
     <property name="sun.arch.data.model" value="64"/>
-    <property name="sun.java.command" value="org.codehaus.classworlds.Launcher -Didea.version=2022.3.1 compile package install"/>
+    <property name="sun.java.command" value="org.codehaus.classworlds.Launcher -Didea.version=2022.3.1 package"/>
     <property name="java.home" value="C:\Program Files\Java\jdk-11.0.16.1"/>
     <property name="user.language" value="en"/>
     <property name="java.specification.vendor" value="Oracle Corporation"/>
@@ -65,5 +65,5 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase classname="com.app.AppTest" name="testApp" time="0.005"/>
+  <testcase classname="com.app.AppTest" name="testApp" time="0.003"/>
 </testsuite>
